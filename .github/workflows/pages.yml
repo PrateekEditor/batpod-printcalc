@@ -1,9 +1,10 @@
 # Publishes to GitHub Pages on every push to main.
 #
-# configure-pages with `enablement: true` switches Pages on for the repo the
-# first time it runs, so there is no manual Settings → Pages step. If the
-# deploy job still says "Ensure GitHub Pages has been enabled", open
-# Settings → Pages once and set Source to "GitHub Actions".
+# One-time setup, which the workflow token is not allowed to do for you
+# ("Resource not accessible by integration"):
+#   repo → Settings → Pages → Build and deployment → Source: "GitHub Actions"
+# Pages on a free account also needs the repo to be public.
+# After that every push to main publishes.
 name: Deploy to GitHub Pages
 
 on:
@@ -26,8 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/setup-node@v5
         with:
           node-version: 22
