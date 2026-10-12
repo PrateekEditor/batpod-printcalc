@@ -1,6 +1,9 @@
-# Publishes the calculator to GitHub Pages on every push to main.
+# Publishes to GitHub Pages on every push to main.
 #
-# One-time setup in the repo: Settings → Pages → Source: "GitHub Actions".
+# configure-pages with `enablement: true` switches Pages on for the repo the
+# first time it runs, so there is no manual Settings → Pages step. If the
+# deploy job still says "Ensure GitHub Pages has been enabled", open
+# Settings → Pages once and set Source to "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
@@ -21,17 +24,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/configure-pages@v5
         with:
-          node-version: 20
+          enablement: true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run build
         env:
-          # Project pages live under /<repo-name>/
           VITE_BASE: /${{ github.event.repository.name }}/
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
