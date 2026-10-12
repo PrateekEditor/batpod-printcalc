@@ -1,6 +1,6 @@
 # batpod-printcalc
 
-**Repo:** https://github.com/PrateekPatelBluvium9878/batpod-printcalc
+**Repo:** https://github.com/PrateekEditor/batpod-printcalc
 
 A job-costing calculator for 3D print shops. Standalone — no backend, no database, no accounts; everything runs in the browser. Built alongside the Batpod Labs shop but useful to any small print business.
 
@@ -79,7 +79,7 @@ Vite is detected: build `npm run build`, output `dist`. No environment variables
 
 ### GitHub Pages (free, no Vercel)
 
-`.github/workflows/pages.yml` builds on push to `main` and publishes to `https://prateekpatelbluvium9878.github.io/batpod-printcalc/`. Once: repo → Settings → Pages → Source: **GitHub Actions**. That is all — there is no API to point at.
+`.github/workflows/pages.yml` builds on push to `main` and publishes to `https://prateekeditor.github.io/batpod-printcalc/`. Once: repo → Settings → Pages → Source: **GitHub Actions**. That is all — there is no API to point at.
 
 ## Customising
 

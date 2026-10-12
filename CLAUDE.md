@@ -34,4 +34,4 @@ Owner's terminals: 1 server, 2 shop, 3 admin, 4 other. **No `# comments` on comm
 
 ## Git
 
-Author `Prateek Patel <prateek.patel@bluvium.com>`. Assistants commit, owner pushes.
+Author `Prateek Patel <prateekpatel9878@gmail.com>`. Assistants commit, owner pushes.
